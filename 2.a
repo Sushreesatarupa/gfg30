@@ -1,0 +1,44 @@
+class Solution{
+	public:
+	    
+    	long long findNth(long long N)
+    {   int c=1,b=1,a;
+        while(c<=N){
+            
+            int m = b,d=0;
+            while(m>0)
+            {   a=m%10;
+                
+                if(a==9)
+                {
+                    d++;
+                }
+                m=m/10;
+            }
+            if(d==0)
+            {
+                ++c;
+            }
+          b++;  
+        }
+        return b-1;
+        
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		long long n , ans;
+		cin>>n;
+		Solution obj;
+		ans = obj.findNth(n);
+		cout<<ans<<endl;
+	}
+}
+
+  // } Driver Code Ends
