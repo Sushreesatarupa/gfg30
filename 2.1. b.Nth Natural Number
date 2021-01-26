@@ -39,3 +39,19 @@ Constraints:
 Topic Tags
  Mathematical
  */
+class Solution{
+	public:
+	    long long rev=0,N=0;
+    	long long findNth(long long N)
+    {   long long mult=1;
+        long long result=0;
+       while(N>0){
+           result+=(N%9)*mult;
+           mult*=10;
+           N/=9;
+           
+       }
+       return result;
+    }
+   
+};
