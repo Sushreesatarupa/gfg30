@@ -38,3 +38,38 @@ Constraints:
 1 ≤ N ≤ 106
 1 ≤ array[i] ≤ 109
 Array may contain duplicates.*/
+
+
+
+
+class Solution
+{   
+public:
+    long long smallestpositive(vector<long long> array, int n)
+    { 
+        // code here 
+        sort(array.begin(),array.end());
+        int i;
+        long long min=1,b=1;
+        
+        if(array[0]>min){
+            return min;
+            
+        }
+            
+        for(i=0;i<n;i++){
+           
+           if (b < array[i]){
+               return b;
+           }
+           b=b+array[i];
+        }
+        return b;
+
+    } 
+};
+
+
+
+
+
